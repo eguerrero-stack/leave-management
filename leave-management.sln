@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30330.147
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "leave-management", "leave-management\leave-management.csproj", "{E352FB6B-6115-4F01-A6B3-F6B425E5BE1F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E352FB6B-6115-4F01-A6B3-F6B425E5BE1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E352FB6B-6115-4F01-A6B3-F6B425E5BE1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E352FB6B-6115-4F01-A6B3-F6B425E5BE1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E352FB6B-6115-4F01-A6B3-F6B425E5BE1F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6F777BB0-2FEA-4128-A660-146B307C06E6}
+	EndGlobalSection
+EndGlobal
