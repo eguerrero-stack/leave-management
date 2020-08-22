@@ -1,4 +1,8 @@
 ﻿@model leave_management.Models.CreateLeaveRequestViewModel
+@using Microsoft.AspNetCore.Identity
+@using leave_management.Data
+@inject SignInManager<Employee> SignInManager
+@inject UserManager<Employee> UserManager
 
 @{
     ViewData["Title"] = "Create";
@@ -8,7 +12,7 @@
 
 <hr />
 <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-12">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
@@ -32,7 +36,7 @@
                     </div>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group col-md-12">
                     <label asp-for="RequestComments" class="control-label"></label>
                     <textarea asp-for="RequestComments" class="form-control"></textarea>
                     <span asp-validation-for="RequestComments" class="text-danger"></span>
@@ -44,10 +48,22 @@
         </form>
     </div>
 </div>
+@if (SignInManager.IsSignedIn(User))
+{
+    if (User.IsInRole("Administrator"))
+    {
+        <div>
+            <a asp-action="Index">Back to List</a>
+        </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+    }
+    else if (User.IsInRole("Employee"))
+    {
+        <div>
+            <a asp-action="MyLeave">Back to List</a>
+        </div>
+    }
+}
 
 @section Scripts{
     <script>

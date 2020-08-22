@@ -176,7 +176,7 @@ namespace leave_management.Controllers
                 var allocation = _leaveAllocationRepo.GetLeaveAllocationsByEmployeeAndType(employee.Id, model.LeaveTypeId);
                 int daysRequested = (int)(endDate - startDate).TotalDays;
 
-                if(daysRequested > allocation.NumberOfDays)
+                if(allocation.NumberOfDays == null || daysRequested > allocation.NumberOfDays)
                 {
                     ModelState.AddModelError("", "You do not have sufficient days for this request");
                     return View(model);

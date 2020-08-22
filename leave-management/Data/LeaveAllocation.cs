@@ -12,7 +12,7 @@ namespace leave_management.Data
         [Key]
         public int Id { get; set; }
 
-        public int NumberOfDays { get; set; }
+        public int? NumberOfDays { get; set; }
         public DateTime DateCreated { get; set; }
         [ForeignKey("EmployeeId")]
         public Employee Employee { get; set; }
