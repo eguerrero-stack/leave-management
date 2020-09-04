@@ -42,11 +42,6 @@ namespace leave_management.Repository
             return leaveType;
         }
 
-        public ICollection<LeaveType> GetEmployeesByLeaveType(int id)
-        {
-            throw new NotImplementedException();
-        }
-
         public async Task<bool> isExists(int id)
         {
             var exists = await _db.LeaveTypes.AnyAsync(q => q.Id == id);
@@ -63,6 +58,11 @@ namespace leave_management.Repository
         {
             _db.LeaveTypes.Update(entity);
             return await Save();
+        }
+
+        public async Task<ICollection<LeaveType>> GetEmployeesByLeaveType(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }
