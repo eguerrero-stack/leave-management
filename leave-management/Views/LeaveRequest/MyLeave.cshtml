@@ -8,11 +8,20 @@
 <div class="jumbotron">
     <div class="card">
         <ul class="list-group list-group-flush">
-            @foreach(var item in Model.LeaveAllocations)
+            @if (Model.LeaveAllocations.Count != 0)
             {
+           @foreach (var item in Model.LeaveAllocations)
+                {
                 <li class="list-group-item">
                     <h6>@item.LeaveType.Name <span class="badge badge-secondary">@item.NumberOfDays</span></h6>
                 </li>
+                }
+            }
+            else
+            {
+        <li class="list-group-item">
+            <h4> <span class="badge badge-danger">No days allocated, speak to your Administrator before applying for leave requests.</span></h4>
+        </li>
             }
         </ul>
     </div>
